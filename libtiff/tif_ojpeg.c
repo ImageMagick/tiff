@@ -1,4 +1,4 @@
-/* $Id: tif_ojpeg.c,v 1.24.2.2 2009-08-20 22:31:00 bfriesen Exp $ */
+/* $Id: tif_ojpeg.c,v 1.24.2.4 2009-09-03 20:45:10 bfriesen Exp $ */
 
 /* WARNING: The type of JPEG encapsulation defined by the TIFF Version 6.0
    specification is now totally obsolete and deprecated for new applications and
@@ -1127,6 +1127,9 @@ OJPEGWriteHeaderInfo(TIFF* tif)
 	if ((sp->subsampling_force_desubsampling_inside_decompression==0) && (sp->samples_per_pixel_per_plane>1))
 	{
 		sp->libjpeg_jpeg_decompress_struct.raw_data_out=1;
+#if JPEG_LIB_VERSION >= 70
+		sp->libjpeg_jpeg_decompress_struct.do_fancy_upsampling=FALSE;
+#endif
 		sp->libjpeg_jpeg_query_style=0;
 		if (sp->subsampling_convert_log==0)
 		{
@@ -2359,7 +2362,7 @@ OJPEGLibjpegJpegErrorMgrOutputMessage(jpeg_common_struct* cinfo)
 {
 	char buffer[JMSG_LENGTH_MAX];
 	(*cinfo->err->format_message)(cinfo,buffer);
-	TIFFWarningExt(((TIFF*)(cinfo->client_data))->tif_clientdata,"LibJpeg",buffer);
+	TIFFWarningExt(((TIFF*)(cinfo->client_data))->tif_clientdata,"LibJpeg", "%s", buffer);
 }
 
 static void
@@ -2367,7 +2370,7 @@ OJPEGLibjpegJpegErrorMgrErrorExit(jpeg_common_struct* cinfo)
 {
 	char buffer[JMSG_LENGTH_MAX];
 	(*cinfo->err->format_message)(cinfo,buffer);
-	TIFFErrorExt(((TIFF*)(cinfo->client_data))->tif_clientdata,"LibJpeg",buffer);
+	TIFFErrorExt(((TIFF*)(cinfo->client_data))->tif_clientdata,"LibJpeg", "%s", buffer);
 	jpeg_encap_unwind((TIFF*)(cinfo->client_data));
 }
 
