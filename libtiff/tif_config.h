@@ -93,7 +93,9 @@
 #define HAVE_SETMODE 1
 
 /* Define to 1 if you have the `snprintf' function. */
+#if defined(_MSC_VER) && _MSC_VER >= 1900
 #define HAVE_SNPRINTF 1
+#endif
 
 /* Define to 1 if you have the `sqrt' function. */
 #define HAVE_SQRT 1
