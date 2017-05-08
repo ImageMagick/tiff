@@ -32,10 +32,18 @@
 #define TIFF_UINT8_T unsigned char
 
 /* Unsigned size type */
+#if defined(_WIN64)
+#define TIFF_SIZE_T unsigned __int64
+#else
 #define TIFF_SIZE_T unsigned int
+#endif
 
 /* Signed size type */
+#if defined(_WIN64)
+#define TIFF_SSIZE_T __int64
+#else
 #define TIFF_SSIZE_T signed int
+#endif
 
 /* Pointer difference type */
 #define TIFF_PTRDIFF_T ptrdiff_t
