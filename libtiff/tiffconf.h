@@ -106,7 +106,7 @@
 
 /* Support strip chopping (whether or not to convert single-strip uncompressed
    images to mutiple strips of ~8Kb to reduce memory usage) */
-#define STRIPCHOP_DEFAULT TIFF_STRIPCHOP
+#define STRIPCHOP_DEFAULT 1
 
 /* Enable SubIFD tag (330) support */
 #define SUBIFD_SUPPORT 1
