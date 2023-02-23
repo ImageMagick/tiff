@@ -122,7 +122,7 @@
 #define VERSION "4.5.0"
 
 /* Support WEBP compression */
-/* #undef WEBP_SUPPORT */
+#define WEBP_SUPPORT 1
 
 /* Support ZSTD compression */
 /* #undef ZSTD_SUPPORT */
