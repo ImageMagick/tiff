@@ -1403,7 +1403,8 @@ int TIFFMergeFieldInfo(TIFF *tif, const TIFFFieldInfo info[], uint32_t n)
         tp->field_bit = info[i].field_bit;
         tp->field_oktochange = info[i].field_oktochange;
         tp->field_passcount = info[i].field_passcount;
-        if (info[i].field_name == NULL)
+        if (info[i].field_name == NULL &&
+            info[i].field_bit != FIELD_IGNORE)
         {
             TIFFErrorExtR(tif, module,
                           "Field_name of %d.th allocation tag %d is NULL", i,
