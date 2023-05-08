@@ -593,6 +593,10 @@ if test "x$enable_jpeg" != "xno" ; then
 
 fi
 
+if test "$jpeg_lib" = "yes" -a "$jpeg_h" = "yes" ; then
+  HAVE_JPEG=yes
+fi
+
 if test "$HAVE_JPEG" = "yes" ; then
   AC_DEFINE(JPEG_SUPPORT,1,[Support JPEG compression (requires IJG JPEG library)])
   LIBS="-ljpeg $LIBS"
