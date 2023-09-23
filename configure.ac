@@ -583,9 +583,6 @@ if test "x$enable_jpeg" != "xno" ; then
   fi
 
   if test "$jpeg_lib" = "yes" -a "$jpeg_h" = "yes" ; then
-    dnl Check for jpeg12_read_scanlines which has been added in libjpeg-turbo 2.2
-    dnl for dual 8/12 bit mode.
-    AC_CHECK_LIB(jpeg, jpeg12_read_scanlines, [HAVE_JPEGTURBO_DUAL_MODE_8_12=yes], [HAVE_JPEGTURBO_DUAL_MODE_8_12=no],)
     HAVE_JPEG=yes
   fi
 
