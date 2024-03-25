@@ -8,7 +8,7 @@ _TIFFLIB_
 
 [DIRECTORIES]
 libtiff
-tport
+port
 
 [INCLUDES]
 jbig->libjbig
