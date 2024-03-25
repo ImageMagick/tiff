@@ -1,0 +1,60 @@
+[DLL]
+
+[LICENSE]
+LICENSE.md
+
+[DEFINES]
+_TIFFLIB_
+
+[DIRECTORIES]
+libtiff
+tport
+
+[INCLUDES]
+jbig->libjbig
+jpeg-turbo->.
+webp->src
+zlib->.
+
+[MODULE_DEFINITION_FILE]
+tiff\libtiff\libtiff.def
+
+[EXCLUDES]
+mkg3states.c
+mkspans.c
+mkversion.c
+fax3sm.c
+fax3sm_winnt.c
+tif_acorn.c
+tif_apple.c
+tif_atari.c
+tif_msdos.c
+tif_win32.c
+tif_vms.c
+tif_win3.c
+getopt.c
+lfind.c
+strtol.c
+strtoll.c
+strtoul.c
+strtoull.c
+strcasecmp.c
+
+[DEPENDENCIES]
+jbig
+jpeg-turbo
+webp
+zlib
+
+[CONFIG_DEFINE]
+/*
+  Define to use the TIFF library
+*/
+#define MAGICKCORE_TIFF_DELEGATE
+#define MAGICKCORE_HAVE_TIFFCONF_H 1
+#define MAGICKCORE_HAVE_TIFFISBIGENDIAN 1
+#define MAGICKCORE_HAVE_TIFFMERGEFIELDINFO 1
+#define MAGICKCORE_HAVE_TIFFISCODECCONFIGURED 1
+#define MAGICKCORE_HAVE_TIFFREADEXIFDIRECTORY 1
+#define MAGICKCORE_HAVE_TIFFREADGPSDIRECTORY 1
+#define MAGICKCORE_HAVE_TIFFSETTAGEXTENDER 1
