@@ -13,6 +13,7 @@ port
 [INCLUDES]
 jbig->libjbig
 jpeg-turbo->.
+lzma->src\liblzma\api
 webp->src
 zlib->.
 
@@ -43,6 +44,7 @@ strcasecmp.c
 [DEPENDENCIES]
 jbig
 jpeg-turbo
+lzma
 webp
 zlib
 

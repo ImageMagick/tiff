@@ -55,7 +55,7 @@
   does not distribute the CRT (it is supplied by Microsoft) so the correct CRT
   must be available on the target computer in order for the program to run.
 */
-#if defined(__WIN32__) && !(defined(_MSC_VER) && _MSC_VER < 1400) &&           \
+#if defined(_WIN32) && !(defined(_MSC_VER) && _MSC_VER < 1400) &&              \
     !(defined(__MSVCRT_VERSION__) && __MSVCRT_VERSION__ < 0x800)
 #define TIFFfseek(stream, offset, whence)                                      \
     _fseeki64(stream, /* __int64 */ offset, whence)
@@ -461,9 +461,11 @@ int main(int argc, char *argv[])
             fsize = TIFFftell(fp) + 1;
             rewind(fp);
 
-            if (fsize >
-                    TIFF_TMSIZE_T_MAX || /* for x32 tmsize_t is only int32_t */
-                fsize <= 0)
+            /* for x32 tmsize_t is only int32_t. The - 1 is just here to make
+             * Coverity Scan happy on 64 bit builds where the condition would
+             * be always true otherwise.
+             */
+            if (fsize > TIFF_TMSIZE_T_MAX - 1 || fsize <= 0)
             {
                 fprintf(
                     stderr,
