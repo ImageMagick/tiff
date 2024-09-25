@@ -44,7 +44,11 @@
 #define TIFF_UINT8_T uint8_t
 
 /* Signed size type */
+#if defined(_WIN64)
 #define TIFF_SSIZE_T int64_t
+#else
+#define TIFF_SSIZE_T int32_t
+#endif
 
 /* Compatibility stuff. */
 
