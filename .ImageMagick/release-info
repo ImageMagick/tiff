@@ -1,2 +1,2 @@
 https://gitlab.com/libtiff/libtiff/-/tags
-tags/v([0-9]+\.[0-9]+\.[0-9]+)"
+tags/v\K([0-9]+\.[0-9]+\.[0-9]+)
