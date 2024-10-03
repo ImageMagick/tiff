@@ -1197,18 +1197,18 @@ int TIFFMergeFieldInfo(TIFF *tif, const TIFFFieldInfo info[], uint32_t n)
     for (i = 0; i < n; i++)
     {
         tp->field_tag = info[i].field_tag;
-        if (info[i].field_readcount < TIFF_VARIABLE2 ||
-            info[i].field_readcount == 0 ||
-            info[i].field_writecount < TIFF_VARIABLE2 ||
-            info[i].field_writecount == 0)
-        {
-            /* The fields (field_readcount) and (field_writecount) may use the
-             * values TIFF_VARIABLE (-1), TIFF_SPP (-2), TIFF_VARIABLE2 (-3). */
-            TIFFErrorExtR(tif, module,
-                          "The value of field_readcount and field_writecount "
-                          "must be greater than or equal to -3 and not zero.");
-            return -1;
-        }
+        //if (info[i].field_readcount < TIFF_VARIABLE2 ||
+        //    info[i].field_readcount == 0 ||
+        //    info[i].field_writecount < TIFF_VARIABLE2 ||
+        //    info[i].field_writecount == 0)
+        //{
+        //    /* The fields (field_readcount) and (field_writecount) may use the
+        //     * values TIFF_VARIABLE (-1), TIFF_SPP (-2), TIFF_VARIABLE2 (-3). */
+        //    TIFFErrorExtR(tif, module,
+        //                  "The value of field_readcount and field_writecount "
+        //                  "must be greater than or equal to -3 and not zero.");
+        //    return -1;
+        //}
         tp->field_readcount = info[i].field_readcount;
         tp->field_writecount = info[i].field_writecount;
         tp->field_type = info[i].field_type;
