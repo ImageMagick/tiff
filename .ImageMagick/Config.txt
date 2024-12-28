@@ -12,7 +12,7 @@ port
 
 [INCLUDES]
 jbig->libjbig
-jpeg-turbo->.
+jpeg-turbo->src
 lzma->src\liblzma\api
 webp->src
 zlib->.
