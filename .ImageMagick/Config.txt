@@ -1,57 +1,40 @@
-[DLL]
+[DYNAMIC_LIBRARY]
 
 [LICENSE]
 LICENSE.md
 
 [DEFINES]
 _TIFFLIB_
+HAVE_JPEGTURBO_DUAL_MODE_8_12
 
-[DEFINES_LIB]
+[STATIC_DEFINES]
 LZMA_API_STATIC
-
-[DIRECTORIES]
-libtiff
-port
-
-[INCLUDES]
-jbig->libjbig
-jpeg-turbo->src
-lzma->src\liblzma\api
-webp->src
-zlib->.
 
 [MODULE_DEFINITION_FILE]
 libtiff\libtiff.def
 
-[EXCLUDES]
-mkg3states.c
-mkspans.c
-mkversion.c
-fax3sm.c
-fax3sm_winnt.c
-tif_acorn.c
-tif_apple.c
-tif_atari.c
-tif_msdos.c
-tif_win32.c
-tif_vms.c
-tif_win3.c
-getopt.c
-lfind.c
-strtol.c
-strtoll.c
-strtoul.c
-strtoull.c
-strcasecmp.c
+[INCLUDE_ARTIFACTS]
+libtiff\tiff.h -> .
+libtiff\tiffconf.h -> .
+libtiff\tiffio.h -> .
+libtiff\tiffvers.h -> .
 
-[DEPENDENCIES]
-jbig
+[EXCLUDES]
+contrib\
+doc\
+libtiff\mkg3states.c
+libtiff\tif_unix.c
+port\
+test\
+tools\
+
+[REFERENCES]
 jpeg-turbo
 lzma
 webp
 zlib
 
-[CONFIG_DEFINE]
+[MAGICK_BASECONFIG_DEFINE]
 /*
   Define to use the TIFF library
 */
