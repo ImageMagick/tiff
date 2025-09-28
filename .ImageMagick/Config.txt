@@ -1,5 +1,23 @@
 [DYNAMIC_LIBRARY]
 
+[VERSION]
+4.7.0
+
+[RELEASE_DATE]
+2024-09-11
+
+[PRODUCT_NAME]
+libtiff
+
+[COMPANY_NAME]
+Silicon Graphics, Inc.
+
+[URL]
+https://gitlab.com/libtiff/libtiff
+
+[COPYRIGHT]
+Copyright (c) 1991 Silicon Graphics, Inc.
+
 [LICENSE_FILE]
 LICENSE.md
 
