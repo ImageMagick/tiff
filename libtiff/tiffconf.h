@@ -76,10 +76,12 @@
 #define CCITT_SUPPORT 1
 
 /* Support JPEG compression (requires IJG JPEG library) */
-/* #undef JPEG_SUPPORT */
+#define JPEG_SUPPORT 1
 
 /* Support JBIG compression (requires JBIG-KIT library) */
-/* #undef JBIG_SUPPORT */
+#ifdef _MAGICK_INCOMPATIBLE_LICENSES_
+#define JBIG_SUPPORT 1
+#endif
 
 /* Support LERC compression */
 /* #undef LERC_SUPPORT */
@@ -95,7 +97,7 @@
 
 /* Support Old JPEG compression (read contrib/ojpeg/README first! Compilation
    fails with unpatched IJG JPEG library) */
-/* #undef OJPEG_SUPPORT */
+#define OJPEG_SUPPORT 1
 
 /* Support Macintosh PackBits algorithm */
 #define PACKBITS_SUPPORT 1
@@ -107,10 +109,10 @@
 #define THUNDER_SUPPORT 1
 
 /* Support Deflate compression */
-/* #undef ZIP_SUPPORT */
+#define ZIP_SUPPORT 1
 
 /* Support libdeflate enhanced compression */
-/* #undef LIBDEFLATE_SUPPORT */
+#define LIBDEFLATE_SUPPORT 1
 
 /* Support strip chopping (whether or not to convert single-strip uncompressed
    images to multiple strips of ~8Kb to reduce memory usage) */

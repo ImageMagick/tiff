@@ -95,7 +95,7 @@
 #define LIBJPEG_12_PATH ""
 
 /* Support LZMA2 compression */
-/* #undef LZMA_SUPPORT */
+#define LZMA_SUPPORT 1
 
 /* Name of package */
 #define PACKAGE "LibTIFF Software"
@@ -129,7 +129,7 @@
 #define USE_WIN32_FILEIO 1
 
 /* Support WEBP compression */
-/* #undef WEBP_SUPPORT */
+#define WEBP_SUPPORT 1
 
 /* Support ZSTD compression */
 /* #undef ZSTD_SUPPORT */
