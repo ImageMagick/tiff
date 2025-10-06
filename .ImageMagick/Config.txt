@@ -43,13 +43,13 @@ libtiff\tiffvers.h -> .
 [EXCLUDES]
 contrib\
 doc\
-libtiff\mkg3states.c
 libtiff\tif_unix.c
 port\
 test\
 tools\
 
 [REFERENCES]
+deflate
 jpeg-turbo
 lzma
 webp
