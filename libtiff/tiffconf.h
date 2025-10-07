@@ -79,7 +79,7 @@
 #define JPEG_SUPPORT 1
 
 /* Support JBIG compression (requires JBIG-KIT library) */
-#ifdef _MAGICK_INCOMPATIBLE_LICENSES_
+#ifdef MAGICK_INCLUDE_INCOMPATIBLE_LICENSE
 #define JBIG_SUPPORT 1
 #endif
 
