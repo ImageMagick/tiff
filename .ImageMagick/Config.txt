@@ -48,7 +48,6 @@ test\
 tools\
 
 [REFERENCES]
-deflate
 jbig
 jpeg-turbo
 lzma

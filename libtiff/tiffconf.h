@@ -112,7 +112,7 @@
 #define ZIP_SUPPORT 1
 
 /* Support libdeflate enhanced compression */
-#define LIBDEFLATE_SUPPORT 1
+/* #undef LIBDEFLATE_SUPPORT */
 
 /* Support strip chopping (whether or not to convert single-strip uncompressed
    images to multiple strips of ~8Kb to reduce memory usage) */
