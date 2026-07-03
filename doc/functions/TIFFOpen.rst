@@ -14,7 +14,7 @@ Synopsis
 
 .. c:function:: TIFF* TIFFOpenW(const wchar_t* name, const char* mode)
 
-.. c:function:: TIFF* TIFFFdOpen(const int fd, const char* filename, const char*mode)
+.. c:function:: TIFF* TIFFFdOpen(const int fd, const char* filename, const char* mode)
 
 .. c:function:: TIFF* TIFFOpenExt(const char* filename, const char* mode, TIFFOpenOptions* opts)
 
@@ -84,7 +84,8 @@ To alter these values, or to define values for additional fields,
 
 :c:func:`TIFFFdOpen` is like :c:func:`TIFFOpen` except that it opens a
 TIFF file given an open file descriptor *fd*.
-The file's name and mode must reflect that of the open descriptor.
+The mode must reflect that of the open descriptor. The file name is used for
+warning and error messages.
 Even for write-only mode, ``libtiff`` needs read permissions because
 some of its functions need to read back the partially written TIFF file.
 The object associated with the file descriptor **must support random access**.

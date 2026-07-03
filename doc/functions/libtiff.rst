@@ -268,6 +268,8 @@ will work.
     * - :c:func:`TIFFGetFieldDefaulted`
       - return tag value in current directory with default value set if the
         value is not already set and a default is defined
+    * - :c:func:`TIFFGetMaxCompressionRatio`
+      - return maximum compression ratio for current codec
     * - :c:func:`TIFFGetMapFileProc`
       - returns a pointer to memory mapping method
     * - :c:func:`TIFFGetMode`
