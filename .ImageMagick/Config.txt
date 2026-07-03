@@ -40,6 +40,8 @@ libtiff\tiffio.h -> .
 libtiff\tiffvers.h -> .
 
 [EXCLUDES]
+archive\
+build\
 contrib\
 doc\
 libtiff\tif_unix.c
