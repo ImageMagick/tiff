@@ -95,7 +95,7 @@
 #define LIBJPEG_12_PATH ""
 
 /* Support LZMA2 compression */
-/* #undef LZMA_SUPPORT */
+#define LZMA_SUPPORT 1
 
 /* Name of package */
 #define PACKAGE "LibTIFF Software"
